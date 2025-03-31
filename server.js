@@ -9,8 +9,7 @@ import fs from 'fs';
 import path from 'path';
 import { initializeApp, cert } from 'firebase-admin/app';
 import { getStorage } from 'firebase-admin/storage';
-import { getFirestore } from 'firebase-admin/firestore';
-// import { getAuth } from 'firebase-admin/auth';
+import { getFirestore } from 'firebase-admin/firestore'
 import serviceAccount from './serviceAccount.json' assert { type: 'json' };
 import crypto from 'crypto';
 import dns from 'dns';
@@ -22,14 +21,12 @@ import { addDoc, doc, updateDoc, collection } from 'firebase/firestore';
 initializeApp({
   credential: cert(serviceAccount),
   storageBucket: 'gs://replica-paste.appspot.com',
-  // databaseURL: "https://replica-paste-default-rtdb.europe-west1.firebasedatabase.app"
 });
 
 const app = express();
 const PORT = 5000;
 const bucket = getStorage().bucket();
 const db = getFirestore();
-// const authAdmin = getAuth();
 
 dotenv.config();
 
@@ -539,54 +536,6 @@ app.get('/', (req, res) => {
   console.log('yass')
   res.send('yasss')
 });
-
-// // POST route to generate a reset link
-// app.get('/generate-reset-link', async (req, res) => {
-//   // const { email } = req.body;
-//   const email = 'mandla@darkm.co.za';
-
-//   try {
-//       // Generate the password reset link
-//       const resetLink = await authAdmin.generatePasswordResetLink(email);
-//       console.log(resetLink)
-
-//       const mailjet = Mailjet.apiConnect(
-//           process.env.VITE_MJ_APIKEY_PUBLIC,
-//           process.env.VITE_MJ_APIKEY_PRIVATE
-//       );
-
-//       const request = mailjet.post('send', { version: 'v3.1' }).request({
-//           Messages: [
-//               {
-//                   From: {
-//                       Email: 'no-reply@darkm.co.za',
-//                       Name: 'SocialPaste',
-//                   },
-//                   To: [
-//                       {
-//                           Email: email
-//                       },
-//                   ],
-//                   TemplateID: 6285005,
-//                   TemplateLanguage: true,
-//                   Variables: {
-//                       resetlink: resetLink,
-//                   },
-//               },
-//           ],
-//       });
-//       request
-//           .then((result) => {
-//               res.status(200).json(result.body);
-//           })
-//           .catch((err) => {
-//               res.status(500).json({ error: err.message });
-//           });
-//   } catch (error) {
-//       console.error('Error generating reset link:', error);
-//       res.status(500).json({ error: 'Error generating reset link' });
-//   }
-// });
 
 
 app.listen(PORT, () => {
