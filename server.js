@@ -10,7 +10,7 @@ import path from 'path';
 import { initializeApp, cert } from 'firebase-admin/app';
 import { getStorage } from 'firebase-admin/storage';
 import { getFirestore } from 'firebase-admin/firestore'
-// import serviceAccount from './serviceAccount.json' assert { type: 'json' };
+import serviceAccount from './serviceAccount.json' assert { type: 'json' };
 import crypto from 'crypto';
 import dns from 'dns';
 
