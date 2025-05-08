@@ -13,7 +13,7 @@ import { getFirestore } from 'firebase-admin/firestore'
 import crypto from 'crypto';
 import dns from 'dns';
 
-// const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccount.json', 'utf-8'));
+const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccount.json', 'utf-8'));
 
 const app = express();
 const PORT = 5000;
