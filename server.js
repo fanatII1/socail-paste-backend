@@ -10,10 +10,10 @@ import path from 'path';
 import { initializeApp, cert } from 'firebase-admin/app';
 import { getStorage } from 'firebase-admin/storage';
 import { getFirestore } from 'firebase-admin/firestore'
-import assert from 'assert';
-import serviceAccount from './serviceAccount.json' assert { type: 'json' };
 import crypto from 'crypto';
 import dns from 'dns';
+
+const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccount.json', 'utf-8'));
 
 const app = express();
 const PORT = 5000;
