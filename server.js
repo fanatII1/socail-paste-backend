@@ -1,22 +1,22 @@
 import express from 'express';
-import Mailjet from 'node-mailjet';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-import tinify from "tinify";
-import multer from 'multer';
-import fs from 'fs';
-import path from 'path';
-import { initializeApp, cert } from 'firebase-admin/app';
-import { getStorage } from 'firebase-admin/storage';
-import { getFirestore } from 'firebase-admin/firestore'
-import assert from 'assert';
-import serviceAccount from './serviceAccount.json' assert { type: 'json' };
-import crypto from 'crypto';
-import dns from 'dns';
+// import Mailjet from 'node-mailjet';
+// import cors from 'cors';
+// import bodyParser from 'body-parser';
+// import dotenv from 'dotenv';
+// import tinify from "tinify";
+// import multer from 'multer';
+// import fs from 'fs';
+// import path from 'path';
+// import { initializeApp, cert } from 'firebase-admin/app';
+// import { getStorage } from 'firebase-admin/storage';
+// import { getFirestore } from 'firebase-admin/firestore'
+// import assert from 'assert';
+// import serviceAccount from './serviceAccount.json' assert { type: 'json' };
+// import crypto from 'crypto';
+// import dns from 'dns';
 
 // import { db } from './firebase.js';
-import { addDoc, doc, updateDoc, collection } from 'firebase/firestore';
+// import { addDoc, doc, updateDoc, collection } from 'firebase/firestore';
 
 const app = express();
 const PORT = 5000;
