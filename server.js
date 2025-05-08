@@ -29,15 +29,15 @@ const serviceAccount = {
   client_x509_cert_url: process.env.FIREBASE_CLIENT_X509_CERT_URL,
 };
 
-console.log(serviceAccount)
+// console.log(serviceAccount)
 
-initializeApp({
-  credential: cert(serviceAccount),
-  storageBucket: 'gs://replica-paste.appspot.com',
-});
+// initializeApp({
+//   credential: cert(serviceAccount),
+//   storageBucket: 'gs://replica-paste.appspot.com',
+// });
 
-const bucket = getStorage().bucket();
-const db = getFirestore();
+// const bucket = getStorage().bucket();
+// const db = getFirestore();
 
 
 
